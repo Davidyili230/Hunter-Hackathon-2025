@@ -1,20 +1,10 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+Description:
+This website aims to provide a platform for getting items that you want but are too expensive to afford through an exchange process where you can provide a used but in good condition item and exchange it with an item that another person provides. In this exchange platform, users can trade items directly with others, making valuable goods more accessible and promoting sustainability.
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Demo: [http://localhost:3000](http://localhost:3000) 
 
 You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
