@@ -105,7 +105,7 @@ export default function MessagePage() {
               <Link className="nav-bar-links" href="/about">About</Link>
               <Link className="nav-bar-links" href="/shop">Shop</Link>
               <Link className="nav-bar-links" href="/message">Messages</Link>
-              <Link href="/login"><button className="nav-bar-sign-in">Sign In</button></Link>
+              <Link href="/login"><button className="nav-bar-sign-in">Log In</button></Link>
               <Link href="/register"><button className="nav-bar-sign-up">Sign Up</button></Link>
               <Link className="profile" href="/profile">
                 <Image src={profileIcon} alt="profile" width={30} height={30} />
