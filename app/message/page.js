@@ -189,8 +189,8 @@ export default function MessagePage() {
       </main>
 
       {/* Footer */}
-      <footer style={{ padding: '20px', backgroundColor: '#f5f5f5', textAlign: 'center' }}>
-        <div className="social-icons" style={{ display: 'flex', justifyContent: 'center', gap: '20px', marginBottom: '10px' }}>
+      <footer style={{ padding: '20px', backgroundColor: '#f5f5f5', textAlign: 'start' }}>
+        <div className="social-icons" style={{ display: 'flex', justifyContent: 'start', gap: '20px', marginBottom: '10px' }}>
           <a href="#"><Image src={facebookIcon} alt="facebook" width={30} height={30} /></a>
           <a href="#"><Image src={instagramIcon} alt="instagram" width={30} height={30} /></a>
           <a href="#"><Image src={twitterIcon} alt="twitter" width={30} height={30} /></a>
