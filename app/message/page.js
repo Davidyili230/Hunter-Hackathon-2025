@@ -195,8 +195,11 @@ export default function MessagePage() {
           <a href="#"><Image src={instagramIcon} alt="instagram" width={30} height={30} /></a>
           <a href="#"><Image src={twitterIcon} alt="twitter" width={30} height={30} /></a>
         </div>
-        <h4>&copy;2025 FOOD</h4>
+        <div style={{marginTop:'10px'}}>
+          <h4 style={{margin : 0}}>&copy;2025 Swaplt</h4>
+        </div>
       </footer>
     </div>
   );
 }
+

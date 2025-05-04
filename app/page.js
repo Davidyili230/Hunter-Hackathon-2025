@@ -2,10 +2,12 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';  // ✅ 加入 router
+
 import logo from '../public/logo111.png';
 import whateverpic1 from '../public/knight.png';
 import whateverpic2 from '../public/exchange.png';
-import whateverpic3 from '../public/change.png';
+import whateverpic3 from '../public/bottle.png';
 import displaypic1 from '../public/shouban.webp';
 import displaypic2 from '../public/penny.png';
 import displaypic3 from '../public/comic.avif';
@@ -22,6 +24,8 @@ import classification6 from '../public/superhero.png';
 import classification7 from '../public/comic.avif';
 
 export default function HomePage() {
+  const router = useRouter();  // ✅ 创建 router 实例
+
   return (
     <div>
       <header>
@@ -29,7 +33,7 @@ export default function HomePage() {
           <div className="grid-container">
             <div className="left-text">
               <Link href="/">
-                <Image className="nav-bar-logo-img" src={logo} alt="business logo"/>
+                <Image className="nav-bar-logo-img" src={logo} alt="business logo" />
               </Link>
             </div>
             <div className="right-text">
@@ -43,7 +47,7 @@ export default function HomePage() {
                 <button className="nav-bar-sign-up">Sign Up</button>
               </Link>
               <Link className="nav-bar-links" href="/profiles">
-                <Image className="nav-bar-profile "src={profileIcon} alt="Profile" width={35} height={35}/>
+                <Image className="nav-bar-profile" src={profileIcon} alt="Profile" width={35} height={35} />
               </Link>
             </div>
           </div>
@@ -56,12 +60,14 @@ export default function HomePage() {
         <h2>Add, swap, and no waste. Give your preloved item a second life.</h2>
       </section>
 
+      {/* Section Two */}
       <section id="section-two" className="home-three-items">
         <Image src={whateverpic1} alt="wpic1" width={300} height={300} />
         <Image src={whateverpic2} alt="wpic2" width={300} height={300} />
         <Image src={whateverpic3} alt="wpic3" width={300} height={300} />
       </section>
 
+      {/* Section Three */}
       <section id="section-three">
         <h1>Most Popular</h1>
         <h2>The 3 Most In-Demand Items on Our Marketplace.</h2>
@@ -85,19 +91,19 @@ export default function HomePage() {
           ].map((item, idx) => (
             <div key={idx} className="home-listing-grid-two-column">
               <div className="home-listing-left-content">
-                <Image src={item.img} alt={item.title} width={200} height={200} />
+                <Image src={item.img} alt={item.title} width={100} height={200} />
               </div>
               <div className="home-listing-right-content">
                 <h1>{item.title}</h1>
                 <h3>{item.detail}</h3>
-                <button>Click Here</button>
+                <button onClick={() => router.push('/message')}>Click Here</button> {/* ✅ 点击跳转 */}
               </div>
             </div>
           ))}
         </div>
       </section>
 
-
+      {/* Section Four */}
       <section id="section-four">
         <h1>Browse by Category</h1>
         <h2>We've highlighted some of the most popular categories to help you get started.</h2>
@@ -126,22 +132,21 @@ export default function HomePage() {
         </div>
       </section>
 
-
-
-    <footer>
-      <div className="social-icons">
-        <a href="#" target="_blank">
-          <Image src={facebookIcon} alt="facebook" width={30} height={30}/>
-        </a>  
-        <a href="#" target="_blank">
-          <Image src={instagramIcon} alt="instagram" width={30} height={30}/>
-        </a>
-        <a href="#" target="_blank">
-          <Image src={twitterIcon} alt="twitter" width={30} height={30}/>
-        </a>
-      </div>
-      <h4>&copy;2025 Swaplt</h4>
-    </footer>
-  </div>
+      {/* Footer */}
+      <footer>
+        <div className="social-icons">
+          <a href="#" target="_blank">
+            <Image src={facebookIcon} alt="facebook" width={30} height={30} />
+          </a>
+          <a href="#" target="_blank">
+            <Image src={instagramIcon} alt="instagram" width={30} height={30} />
+          </a>
+          <a href="#" target="_blank">
+            <Image src={twitterIcon} alt="twitter" width={30} height={30} />
+          </a>
+        </div>
+        <h4>&copy;2025 Swaplt</h4>
+      </footer>
+    </div>
   );
 }
