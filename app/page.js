@@ -1,103 +1,147 @@
-import Image from "next/image";
+'use client';
 
-export default function Home() {
+import Link from 'next/link';
+import Image from 'next/image';
+import logo from '../public/logo111.png';
+import whateverpic1 from '../public/knight.png';
+import whateverpic2 from '../public/exchange.png';
+import whateverpic3 from '../public/change.png';
+import displaypic1 from '../public/shouban.webp';
+import displaypic2 from '../public/penny.png';
+import displaypic3 from '../public/comic.avif';
+import facebookIcon from '../public/facebook1.png';
+import instagramIcon from '../public/instagram1.png';
+import twitterIcon from '../public/twitter.jpg';
+import profileIcon from '../public/profile.jpg';
+import classification1 from '../public/poster.png';
+import classification2 from '../public/Guitar.png';
+import classification3 from '../public/ipad.jpg';
+import classification4 from '../public/Cards.jpg';
+import classification5 from '../public/bed.png';
+import classification6 from '../public/superhero.png';
+import classification7 from '../public/comic.avif';
+
+export default function HomePage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div>
+      <header>
+        <nav className="nav-bar">
+          <div className="grid-container">
+            <div className="left-text">
+              <Link href="/">
+                <Image className="nav-bar-logo-img" src={logo} alt="business logo"/>
+              </Link>
+            </div>
+            <div className="right-text">
+              <Link className="nav-bar-links" href="/about">About</Link>
+              <Link className="nav-bar-links" href="/shop">Shop</Link>
+              <Link className="nav-bar-links" href="/message">Message</Link>
+              <Link href="/login">
+                <button className="nav-bar-sign-in">Log In</button>
+              </Link>
+              <Link href="/register">
+                <button className="nav-bar-sign-up">Sign Up</button>
+              </Link>
+              <Link className="nav-bar-links" href="/profiles">
+                <Image className="nav-bar-profile "src={profileIcon} alt="Profile" width={35} height={35}/>
+              </Link>
+            </div>
+          </div>
+        </nav>
+      </header>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Section One */}
+      <section id="section-one" className="home-title">
+        <h1>Welcome to Swaplt</h1>
+        <h2>Add, swap, and no waste. Give your preloved item a second life.</h2>
+      </section>
+
+      <section id="section-two" className="home-three-items">
+        <Image src={whateverpic1} alt="wpic1" width={300} height={300} />
+        <Image src={whateverpic2} alt="wpic2" width={300} height={300} />
+        <Image src={whateverpic3} alt="wpic3" width={300} height={300} />
+      </section>
+
+      <section id="section-three">
+        <h1>Most Popular</h1>
+        <h2>The 3 Most In-Demand Items on Our Marketplace.</h2>
+        <div className="home-listing-column">
+          {[
+            {
+              img: displaypic1,
+              title: 'One Piece Figurine',
+              detail: 'Limited edition One Piece set with all crew members.'
+            },
+            {
+              img: displaypic2,
+              title: '1857 Penny',
+              detail: 'Perfect condition, 1850s penny made in copper.'
+            },
+            {
+              img: displaypic3,
+              title: 'Comic Book',
+              detail: 'Superhero first edition from 1994.'
+            }
+          ].map((item, idx) => (
+            <div key={idx} className="home-listing-grid-two-column">
+              <div className="home-listing-left-content">
+                <Image src={item.img} alt={item.title} width={200} height={200} />
+              </div>
+              <div className="home-listing-right-content">
+                <h1>{item.title}</h1>
+                <h3>{item.detail}</h3>
+                <button>Click Here</button>
+              </div>
+            </div>
+          ))}
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
+      </section>
+
+
+      <section id="section-four">
+        <h1>Browse by Category</h1>
+        <h2>We've highlighted some of the most popular categories to help you get started.</h2>
+        <div className="home-listing-scroll-wrapper">
+          <div className="home-listing-scroll">
+            {[
+              { img: classification1, title: 'Poster' },
+              { img: classification2, title: 'Guitar' },
+              { img: classification3, title: 'IPad' },
+              { img: classification4, title: 'Card' },
+              { img: classification5, title: 'Bed' },
+              { img: classification6, title: 'Figurines' },
+              { img: classification7, title: 'Comics' },
+            ].map((item, idx) => (
+              <div key={idx} className="home-listing-content">
+                <div className="home-listing-top-content">
+                  <Image src={item.img} alt={item.title} width={200} height={200} />
+                </div>
+                <div className="home-listing-bottom-content">
+                  <h1>{item.title}</h1>
+                  <button>Click Here</button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
+
+    <footer>
+      <div className="social-icons">
+        <a href="#" target="_blank">
+          <Image src={facebookIcon} alt="facebook" width={30} height={30}/>
+        </a>  
+        <a href="#" target="_blank">
+          <Image src={instagramIcon} alt="instagram" width={30} height={30}/>
         </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
+        <a href="#" target="_blank">
+          <Image src={twitterIcon} alt="twitter" width={30} height={30}/>
         </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </div>
+      <h4>&copy;2025 Swaplt</h4>
+    </footer>
+  </div>
   );
 }
